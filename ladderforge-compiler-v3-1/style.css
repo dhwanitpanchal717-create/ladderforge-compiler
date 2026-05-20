@@ -1,4 +1,8 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
+ * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 :root {
   --bg: #08101f;
@@ -33,6 +37,21 @@ body {
   background: rgba(0,0,0,.24);
 }
 
+.creator-name {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #eaf7ff;
+  opacity: 0.88;
+  margin-bottom: 8px;
+  letter-spacing: 0.03em;
+  padding: 6px 12px;
+  border: 1px solid rgba(0, 245, 184, 0.25);
+  border-radius: 999px;
+  background: rgba(0, 245, 184, 0.08);
+  box-shadow: 0 0 18px rgba(0, 245, 184, 0.08);
+}
+
 .eyebrow {
   font-size: 12px;
   letter-spacing: .14em;
@@ -40,8 +59,15 @@ body {
   text-transform: uppercase;
 }
 
-h1 { font-size: clamp(30px, 5vw, 54px); margin-top: 4px; }
-.subtitle { color: var(--muted); margin-top: 8px; }
+h1 {
+  font-size: clamp(30px, 5vw, 54px);
+  margin-top: 4px;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 8px;
+}
 
 .score-card {
   min-width: 170px;
@@ -60,9 +86,15 @@ h1 { font-size: clamp(30px, 5vw, 54px); margin-top: 4px; }
   color: var(--accent);
 }
 
-.score-card small { color: var(--muted); }
+.score-card small {
+  color: var(--muted);
+}
 
-.app { padding: 20px; display: grid; gap: 18px; }
+.app {
+  padding: 20px;
+  display: grid;
+  gap: 18px;
+}
 
 .panel {
   border: 1px solid var(--border);
@@ -73,7 +105,8 @@ h1 { font-size: clamp(30px, 5vw, 54px); margin-top: 4px; }
   backdrop-filter: blur(14px);
 }
 
-.toolbar, .mini-toolbar {
+.toolbar,
+.mini-toolbar {
   padding: 14px;
   display: flex;
   gap: 12px;
@@ -88,7 +121,8 @@ label {
   gap: 6px;
 }
 
-select, input[type=file] {
+select,
+input[type=file] {
   min-height: 40px;
   color: var(--text);
   border: 1px solid var(--border);
@@ -108,11 +142,23 @@ button {
   color: #001512;
 }
 
-button:hover { transform: translateY(-1px); filter: brightness(1.07); }
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.07);
+}
 
-.grid { display: grid; gap: 18px; }
-.two { grid-template-columns: 1fr 1fr; }
-.three { grid-template-columns: 1fr 1fr 1fr; }
+.grid {
+  display: grid;
+  gap: 18px;
+}
+
+.two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.three {
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
 .panel-title {
   min-height: 58px;
@@ -125,9 +171,15 @@ button:hover { transform: translateY(-1px); filter: brightness(1.07); }
   border-bottom: 1px solid var(--border);
 }
 
-.panel-title h2 { font-size: 17px; }
+.panel-title h2 {
+  font-size: 17px;
+}
 
-.panel-title span, #sourceBadge, #statusBadge, #diagnosticsCount, #testSummary {
+.panel-title span,
+#sourceBadge,
+#statusBadge,
+#diagnosticsCount,
+#testSummary {
   color: var(--accent);
   background: rgba(0,245,184,.11);
   border: 1px solid rgba(0,245,184,.25);
@@ -166,7 +218,9 @@ pre {
   overflow: auto;
 }
 
-.diag, .summary-row, .test-row {
+.diag,
+.summary-row,
+.test-row {
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 13px;
@@ -174,13 +228,29 @@ pre {
   background: rgba(0,0,0,.25);
 }
 
-.diag.good { border-left-color: var(--good); }
-.diag.error { border-left-color: var(--bad); }
-.diag.info { border-left-color: var(--accent2); }
+.diag.good {
+  border-left-color: var(--good);
+}
 
-.good { color: var(--good); }
-.warn { color: var(--warn); }
-.bad { color: var(--bad); }
+.diag.error {
+  border-left-color: var(--bad);
+}
+
+.diag.info {
+  border-left-color: var(--accent2);
+}
+
+.good {
+  color: var(--good);
+}
+
+.warn {
+  color: var(--warn);
+}
+
+.bad {
+  color: var(--bad);
+}
 
 .matrix {
   padding: 14px;
@@ -198,8 +268,13 @@ pre {
   gap: 4px;
 }
 
-.matrix-card strong { color: var(--accent); }
-.matrix-card small { color: var(--muted); }
+.matrix-card strong {
+  color: var(--accent);
+}
+
+.matrix-card small {
+  color: var(--muted);
+}
 
 .ladder-canvas {
   min-height: 390px;
@@ -238,7 +313,10 @@ pre {
   background: rgba(255,255,255,.58);
 }
 
-.debug { min-height: 390px; max-height: 560px; }
+.debug {
+  min-height: 390px;
+  max-height: 560px;
+}
 
 footer {
   color: var(--muted);
@@ -247,6 +325,12 @@ footer {
 }
 
 @media (max-width: 1050px) {
-  .two, .three { grid-template-columns: 1fr; }
-  .hero { flex-direction: column; }
+  .two,
+  .three {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
 }
