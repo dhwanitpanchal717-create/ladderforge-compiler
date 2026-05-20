@@ -1,0 +1,75 @@
+// LadderForge V3.1 realistic stress file
+
+ORGANIZATION_BLOCK OB1
+TITLE = Production Style Mixed Logic
+VERSION : 0.1
+
+NETWORK
+TITLE = Motor Seal In With Messy Formatting
+      A       I 0.0
+      O       Q 0.0
+      AN      I 0.1
+      =       Q 0.0
+
+NETWORK
+TITLE = Nested Bracket Logic
+A(
+A I 1.0
+O I 1.1
+)
+AN I 1.2
+= Q 1.0
+
+NETWORK
+TITLE = Compare and Math
+L MW20
+L 100
+>I
+= Q 2.0
+
+L MW30
+L 5
++I
+T MW30
+
+NETWORK
+TITLE = Jump Reset Increment
+A I 3.0
+JC RESET_COUNT
+L MB10
+INC 1
+T MB10
+JU END_COUNT
+RESET_COUNT: L 0
+T MB10
+END_COUNT: NOP 0
+
+NETWORK
+TITLE = Timer Counter Foundation
+A I 4.0
+L S5T#5S
+SD T1
+A T1
+= Q 4.0
+
+A I 4.1
+CU C1
+L C#10
+S C1
+A C1
+= Q 4.1
+
+NETWORK
+TITLE = DB and CALL Diagnostic
+OPN DB 10
+L DBW 0
+L 250
+>=I
+= Q 6.0
+
+CALL FB 20, DB 20
+ Start := I 7.0
+ Speed := MW40
+ Done := Q 7.0
+
+END_ORGANIZATION_BLOCK

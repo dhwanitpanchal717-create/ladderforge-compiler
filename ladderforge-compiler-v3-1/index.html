@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LadderForge Compiler V3.1</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">LadderForge Compiler V3.1</p>
+      <h1>Parser Accuracy Upgrade</h1>
+      <p class="subtitle">Real-world AWL/STL tolerance • nested brackets • block parsing • improved diagnostics</p>
+    </div>
+    <div class="score-card">
+      <span id="confidenceScore">0%</span>
+      <small>Conversion Confidence</small>
+    </div>
+  </header>
+
+  <main class="app">
+    <section class="panel toolbar">
+      <label>
+        Mode
+        <select id="modeSelect">
+          <option value="stl-to-ladder">STL/AWL → Ladder</option>
+          <option value="ladder-to-stl">Ladder Text → STL/AWL</option>
+        </select>
+      </label>
+
+      <label>
+        Upload
+        <input type="file" id="fileInput" accept=".awl,.txt,.ladder,.lfproj,.json,.scl" />
+      </label>
+
+      <button id="compileBtn">Compile</button>
+      <button id="copyBtn">Copy Output</button>
+      <button id="downloadBtn">Download Output</button>
+      <button id="saveProjectBtn">Save .lfproj</button>
+      <button id="exportIrBtn">Export IR</button>
+      <button id="exportReportBtn">Export Report</button>
+    </section>
+
+    <section class="grid two">
+      <section class="panel">
+        <div class="panel-title">
+          <h2>Source Editor</h2>
+          <span id="sourceBadge">STL/AWL</span>
+        </div>
+        <textarea id="sourceInput" spellcheck="false"></textarea>
+      </section>
+
+      <section class="panel">
+        <div class="panel-title">
+          <h2>Output</h2>
+          <span id="statusBadge">Idle</span>
+        </div>
+        <pre id="outputBox"></pre>
+      </section>
+    </section>
+
+    <section class="grid three">
+      <section class="panel">
+        <div class="panel-title">
+          <h2>Diagnostics</h2>
+          <span id="diagnosticsCount">0</span>
+        </div>
+        <div id="diagnosticsBox" class="scroll"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-title">
+          <h2>Parser Summary</h2>
+          <span>V3.1</span>
+        </div>
+        <div id="parserSummary" class="scroll"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-title">
+          <h2>Examples & Tests</h2>
+          <span id="testSummary">Ready</span>
+        </div>
+        <div class="mini-toolbar">
+          <select id="exampleSelect"></select>
+          <button id="loadExampleBtn">Load</button>
+          <button id="runTestsBtn">Run Tests</button>
+        </div>
+        <div id="testResults" class="scroll"></div>
+      </section>
+    </section>
+
+    <section class="grid two">
+      <section class="panel">
+        <div class="panel-title">
+          <h2>Visual Ladder Preview</h2>
+          <span>IR Render</span>
+        </div>
+        <div class="mini-toolbar">
+          <button data-add="NO">Add NO</button>
+          <button data-add="NC">Add NC</button>
+          <button data-add="COIL">Add Coil</button>
+          <button data-add="SET">Add Set</button>
+          <button data-add="RESET">Add Reset</button>
+          <button id="clearVisualBtn">Clear</button>
+        </div>
+        <div id="visualCanvas" class="ladder-canvas"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-title">
+          <h2>Debug View</h2>
+          <select id="debugSelect">
+            <option value="tokens">Tokens</option>
+            <option value="ast">AST</option>
+            <option value="cfg">CFG</option>
+            <option value="ir">Ladder IR</option>
+            <option value="symbols">Symbols</option>
+          </select>
+        </div>
+        <pre id="debugBox" class="debug"></pre>
+      </section>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">
+        <h2>Instruction Support Matrix</h2>
+        <span>Full / Partial / Diagnostic</span>
+      </div>
+      <div id="supportMatrix" class="matrix"></div>
+    </section>
+  </main>
+
+  <footer>Created by Dhwanit • LadderForge is demo/development-ready, not production-certified.</footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
